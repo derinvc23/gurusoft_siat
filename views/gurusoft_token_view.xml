@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_gurusoft_token_form" model="ir.ui.view">
+            <field name="name">gurusoft.token.form</field>
+            <field name="model">gurusoft.token</field>
+            <field name="arch" type="xml">
+                <form string="Account">
+                    <header>
+                        <button name="get_token" type="object" string="Obtener Token" class="oe_highlight"/>
+                        <button name="sincronizar_catalogo" type="object" string="Sincronizar Catalogo"
+                                class="oe_highlight"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="company_id"/>
+                                <field name="op"/>
+                                <field name="nit"/>
+                                <field name="user"/>
+                                <field name="password"/>
+                                <field name="email_responsable"/>
+                                <field name="token_factura" height="50"/>
+                                <field name="token_catalogo" height="50"/>
+                                <field name="token_operaciones" height="50"/>
+                                <field name="expedido"/>
+                                <field name="expira"/>
+                            </group>
+                            <group>
+                                <button name='%(act_siat_actividades)d' icon="fa-arrow-right" type="action"
+                                        string="Ver Actividades" class="btn-link"/>
+                                <button name='%(act_siat_mensajes)d' icon="fa-arrow-right" type="action"
+                                        string="Ver Mensajes" class="btn-link"/>
+                                <button name='%(act_siat_eventos)d' icon="fa-arrow-right" type="action"
+                                        string="Ver Eventos" class="btn-link"/>
+                                <button name='%(act_siat_motivo_anulacion)d' icon="fa-arrow-right" type="action"
+                                        string="Ver Motivo Anulación" class="btn-link"/>
+                                <button name='%(act_siat_paises)d' icon="fa-arrow-right" type="action"
+                                        string="Ver Paises" class="btn-link"/>
+                                <button name='%(act_siat_documento_identidad)d' icon="fa-arrow-right" type="action"
+                                        string="Ver Documentos Identidad" class="btn-link"/>
+                                <button name='%(act_siat_documento_sector)d' icon="fa-arrow-right" type="action"
+                                        string="Ver Documentos por sector" class="btn-link"/>
+                                <button name='%(act_siat_tipo_emision)d' icon="fa-arrow-right" type="action"
+                                        string="Ver Tipo de Emisión" class="btn-link"/>
+                                <button name='%(act_siat_metodo_pago)d' icon="fa-arrow-right" type="action"
+                                        string="Ver Metodo de Pago" class="btn-link"/>
+                                <button name='%(act_siat_tipo_moneda)d' icon="fa-arrow-right" type="action"
+                                        string="Ver Tipos de Moneda" class="btn-link"/>
+                                <button name='%(act_siat_tipo_punto_venta)d' icon="fa-arrow-right" type="action"
+                                        string="Ver Tipos de Punto de Venta" class="btn-link"/>
+                                <button name='%(act_siat_tipo_factura)d' icon="fa-arrow-right" type="action"
+                                        string="Ver Tipos de Facturas" class="btn-link"/>
+                                <button name='%(act_siat_unidad_medida)d' icon="fa-arrow-right" type="action"
+                                        string="Ver Unidades de Medida" class="btn-link"/>
+                                <button name='%(act_siat_productos)d' icon="fa-arrow-right" type="action"
+                                        string="Ver Productos" class="btn-link"/>
+                                <button name='%(act_siat_leyendas)d' icon="fa-arrow-right" type="action"
+                                        string="Ver Leyendas de Factura" class="btn-link"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_gurusoft_token_list" model="ir.ui.view">
+            <field name="name">gurusoft.token.list</field>
+            <field name="model">gurusoft.token</field>
+            <field name="arch" type="xml">
+                <tree string="Tokens" toolbar="1">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_gurusoft_token_search" model="ir.ui.view">
+            <field name="name">gurusoft.token.search</field>
+            <field name="model">gurusoft.token</field>
+            <field name="arch" type="xml">
+                <search string="Accounts">
+                    <field name="name" filter_domain="['|', ('name','ilike',self), ('code','=like',str(self)+'%')]"
+                           string="Token"/>
+                </search>
+            </field>
+        </record>
+        <record id="action_gurusoft_token_form" model="ir.actions.act_window">
+            <field name="name">Token Gurusoft</field>
+            <field name="res_model">gurusoft.token</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_gurusoft_token_search"/>
+            <field name="view_id" ref="view_gurusoft_token_list"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Agregar nuevo token
+                </p>
+                <p>
+                    Defina los tokens obtenidos de gurusoft
+                </p>
+            </field>
+        </record>
+        <menuitem action="action_gurusoft_token_form" id="menu_action_gurusoft_token_form"
+                  parent="account.menu_finance_entries"
+                  sequence="50"/>
+    </data>
+</odoo>

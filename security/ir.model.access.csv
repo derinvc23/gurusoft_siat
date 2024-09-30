@@ -1,0 +1,17 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_siat_actividades,siat_actividades,model_siat_actividades,account.group_account_user,1,1,1,1
+access_siat_mensajes,siat_mensajes,model_siat_mensajes,account.group_account_user,1,1,1,1
+access_siat_eventos,siat_eventos,model_siat_eventos,account.group_account_user,1,1,1,1
+access_siat_motivo_anulacion,siat_motivo_anulacion,model_siat_motivo_anulacion,account.group_account_user,1,1,1,1
+access_siat_paises,siat_paises,model_siat_paises,account.group_account_user,1,1,1,1
+access_siat_documento_identidad,siat_documento_identidad,model_siat_documento_identidad,account.group_account_user,1,1,1,1
+access_siat_documento_sector,siat_documento_sector,model_siat_documento_sector,account.group_account_user,1,1,1,1
+access_siat_tipo_emision,siat_tipo_emision,model_siat_tipo_emision,account.group_account_user,1,1,1,1
+access_siat_metodo_pago,siat_metodo_pago,model_siat_metodo_pago,account.group_account_user,1,1,1,1
+access_siat_tipo_moneda,siat_tipo_moneda,model_siat_tipo_moneda,account.group_account_user,1,1,1,1
+access_siat_tipo_punto_venta,siat_tipo_punto_venta,model_siat_tipo_punto_venta,account.group_account_user,1,1,1,1
+access_siat_tipo_factura,siat_tipo_factura,model_siat_tipo_factura,account.group_account_user,1,1,1,1
+access_siat_unidad_medida,siat_unidad_medida,model_siat_unidad_medida,account.group_account_user,1,1,1,1
+access_siat_productos,siat_productos,model_siat_productos,account.group_account_user,1,1,1,1
+access_siat_leyendas,siat_leyendas,model_siat_leyendas,account.group_account_user,1,1,1,1
+access_gurusoft_token,gurusoft_token,model_gurusoft_token,account.group_account_manager,1,1,1,1

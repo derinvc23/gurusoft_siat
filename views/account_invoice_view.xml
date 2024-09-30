@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="account_invoice_gurusoft_form" model="ir.ui.view">
+            <field name="name">account.invoice.form.gurusoft</field>
+            <field name="model">account.invoice</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="invoice_bo.account_invoice_form2"/>
+            <field name="arch" type="xml">
+                <field name="nit" position="after">
+                    <field name="token_id" invisible="1"/>
+                    <field name="pago_id"
+                           attrs="{'readonly':[('state','!=','draft')], 'required':[('token_id','!=',False)]}"/>
+                    <field name="ntarjeta" attrs="{'readonly':[('state','!=','draft')]}"/>
+                    <field name="doc_identidad_id"
+                           attrs="{'readonly':[('state','!=','draft')], 'required':[('token_id','!=',False)]}"/>
+                    <field name="anulacion_id" attrs="{'readonly':[('state','!=','open')]}"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="account_invoice_guru2" model="ir.ui.view">
+            <field name="name">account.invoice.form.guru2</field>
+            <field name="model">account.invoice</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[2]" position="after">
+                    <page string="Facturacion Electrónica" attrs="{'invisible':[('token_id','=',False)]}">
+                        <group>
+                            <group string="Datos de emision">
+                                <field name="token_id"/>
+                                <field name="leyenda_id" attrs="{'required':[('token_id','!=',False)]}"/>
+                                <field name="emision_id" attrs="{'required':[('token_id','!=',False)]}"/>
+                                <field name="tipo_fac_id" attrs="{'required':[('token_id','!=',False)]}"/>
+                                <field name="actividad_id"/>
+                                <field name="doc_sector_id"/>
+                                <field name="tipo_punto_venta_id"/>
+                                <field name="codigo_sucursal"/>
+                                <field name="codigo_pdv"/>
+                            </group>
+                            <group string="Respuesta SIAT">
+                                <field name="cod_recepcion" attrs="{'readonly':[('state','!=','open')]}"/>
+                                <field name="fecha_emision" attrs="{'readonly':[('state','!=','open')]}"/>
+                                <field name="cuis" attrs="{'readonly':[('state','!=','open')]}"/>
+                                <field name="codigo_control" attrs="{'readonly':[('state','!=','open')]}"/>
+                                <field name="cufd" attrs="{'readonly':[('state','!=','open')]}"/>
+                                <field name="url_siat" widget="url" attrs="{'readonly':[('state','!=','open')]}"/>
+                                <field name="cuf" attrs="{'readonly':[('state','!=','open')]}"/>
+                                <field name="estado_siat" attrs="{'readonly':[('state','!=','open')]}"/>
+                                <div>
+                                    <button class="oe_highlight" string="Consultar Estado"
+                                            name="action_consultar_factura" type="object"
+                                            attrs="{'invisible':[('estado_siat','=','VALIDA')]}"/>
+                                </div>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

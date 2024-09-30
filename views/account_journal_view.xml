@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="account_journal_gurusoft" model="ir.ui.view">
+            <field name="name">account.journal.form.gurusoft</field>
+            <field name="model">account.journal</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[2]" position="after">
+                    <page string="Facturación Electronica" groups="account.group_account_manager"
+                          attrs="{'invisible': [('dosificacion','=', False)]}">
+                        <group string="Datos SIAT" col="4" colspan="4">
+                            <field name="token_id" domain="[('company_id','=', company_id)]"/>
+                            <field name="leyenda_id" attrs="{'required':[('token_id','!=',False)]}"/>
+                            <field name="actividad_id" attrs="{'required':[('token_id','!=',False)]}"/>
+                            <field name="doc_sector_id" attrs="{'required':[('token_id','!=',False)]}"/>
+                            <field name="tipo_punto_venta_id" attrs="{'required':[('token_id','!=',False)]}"/>
+                            <field name="codigo_sucursal" attrs="{'required':[('token_id','!=',False)]}"/>
+                            <field name="codigo_pdv" attrs="{'required':[('token_id','!=',False)]}"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="account_journal_gurusoft_bo" model="ir.ui.view">
+            <field name="name">account.journal.form.gurusoft</field>
+            <field name="model">account.journal</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="invoice_bo.account_journal_facturacion"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='razon_social']" position="attributes">
+                    <attribute name="attrs">{'required':[('token_id','!=',False)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='nit_contribuyente']" position="attributes">
+                    <attribute name="attrs">{'required':[('token_id','!=',False)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='nombre_unipersonal']" position="attributes">
+                    <attribute name="attrs">{'required':[('token_id','!=',False)]}</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

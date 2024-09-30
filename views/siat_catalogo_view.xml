@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="siat_actividades_view_list">
+            <field name="name">siat.actividades.view.list</field>
+            <field name="model">siat.actividades</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="codigo_caeb"/>
+                    <field name="descripcion"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_siat_actividades">
+            <field name="name">Actividades</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">siat.actividades</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+
+        <record model="ir.ui.view" id="siat_mensajes_view_list">
+            <field name="name">siat.mensajes.view.list</field>
+            <field name="model">siat.mensajes</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="codigo_clasificador"/>
+                    <field name="descripcion"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_siat_mensajes">
+            <field name="name">Mensajes</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">siat.mensajes</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+
+        <record model="ir.ui.view" id="siat_eventos_view_list">
+            <field name="name">siat.eventos.view.list</field>
+            <field name="model">siat.eventos</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="codigo_clasificador"/>
+                    <field name="descripcion"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_siat_eventos">
+            <field name="name">Mensajes</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">siat.eventos</field>
+            <field name="view_mode">tree</field>
+        </record>
+        
+        
+        <record model="ir.ui.view" id="siat_motivo_anulacion_view_list">
+            <field name="name">siat.motivo.anulacion.view.list</field>
+            <field name="model">siat.motivo.anulacion</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="codigo_clasificador"/>
+                    <field name="descripcion"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_siat_motivo_anulacion">
+            <field name="name">Motivo Anulacion</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">siat.motivo.anulacion</field>
+            <field name="view_mode">tree</field>
+        </record>
+        
+        <record model="ir.ui.view" id="siat_paises_view_list">
+            <field name="name">siat.paises.view.list</field>
+            <field name="model">siat.paises</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="codigo_clasificador"/>
+                    <field name="descripcion"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_siat_paises">
+            <field name="name">Paises</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">siat.paises</field>
+            <field name="view_mode">tree</field>
+        </record>
+        
+        <record model="ir.ui.view" id="siat_documento_identidad_view_list">
+            <field name="name">siat.documento.identidad.view.list</field>
+            <field name="model">siat.documento.identidad</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="codigo_clasificador"/>
+                    <field name="descripcion"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_siat_documento_identidad">
+            <field name="name">Documentos de Identidad</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">siat.documento.identidad</field>
+            <field name="view_mode">tree</field>
+        </record>
+        
+        <record model="ir.ui.view" id="siat_documento_sector_view_list">
+            <field name="name">siat.documento.sector.view.list</field>
+            <field name="model">siat.documento.sector</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="codigo_clasificador"/>
+                    <field name="descripcion"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_siat_documento_sector">
+            <field name="name">Documentos de Identidad</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">siat.documento.sector</field>
+            <field name="view_mode">tree</field>
+        </record>
+        
+        <record model="ir.ui.view" id="siat_tipo_emision_view_list">
+            <field name="name">siat.tipo.emision.view.list</field>
+            <field name="model">siat.tipo.emision</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="codigo_clasificador"/>
+                    <field name="descripcion"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_siat_tipo_emision">
+            <field name="name">Tipo de Emisión</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">siat.tipo.emision</field>
+            <field name="view_mode">tree</field>
+        </record>
+        
+        <record model="ir.ui.view" id="siat_metodo_pago_view_list">
+            <field name="name">siat.metodo.pago.view.list</field>
+            <field name="model">siat.metodo.pago</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="codigo_clasificador"/>
+                    <field name="descripcion"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_siat_metodo_pago">
+            <field name="name">Método Pago</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">siat.metodo.pago</field>
+            <field name="view_mode">tree</field>
+        </record>
+        
+        <record model="ir.ui.view" id="siat_tipo_moneda_view_list">
+            <field name="name">siat.tipo.moneda.view.list</field>
+            <field name="model">siat.tipo.moneda</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="codigo_clasificador"/>
+                    <field name="descripcion"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_siat_tipo_moneda">
+            <field name="name">Tipos de Moneda</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">siat.tipo.moneda</field>
+            <field name="view_mode">tree</field>
+        </record>
+        
+        <record model="ir.ui.view" id="siat_tipo_punto_venta_view_list">
+            <field name="name">siat.tipo.punto.venta.view.list</field>
+            <field name="model">siat.tipo.punto.venta</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="codigo_clasificador"/>
+                    <field name="descripcion"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_siat_tipo_punto_venta">
+            <field name="name">Tipo Punto de Venta</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">siat.tipo.punto.venta</field>
+            <field name="view_mode">tree</field>
+        </record>
+        
+        <record model="ir.ui.view" id="siat_tipo_factura_view_list">
+            <field name="name">siat.tipo.factura.view.list</field>
+            <field name="model">siat.tipo.factura</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="codigo_clasificador"/>
+                    <field name="descripcion"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_siat_tipo_factura">
+            <field name="name">Tipo de Factura</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">siat.tipo.factura</field>
+            <field name="view_mode">tree</field>
+        </record>
+        
+        <record model="ir.ui.view" id="siat_unidad_medida_view_list">
+            <field name="name">siat.unidad.medida.view.list</field>
+            <field name="model">siat.unidad.medida</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="codigo_clasificador"/>
+                    <field name="descripcion"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_siat_unidad_medida">
+            <field name="name">Tipo de Factura</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">siat.unidad.medida</field>
+            <field name="view_mode">tree</field>
+        </record>
+        
+        <record model="ir.ui.view" id="siat_productos_view_list">
+            <field name="name">siat.productos.view.list</field>
+            <field name="model">siat.productos</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="descripcion_producto"/>
+                    <field name="codigo_producto"/>
+                    <field name="codigo_actividad"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_siat_productos">
+            <field name="name">Tipo de Factura</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">siat.productos</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <record model="ir.ui.view" id="siat_leyendas_view_list">
+            <field name="name">siat.leyendas.view.list</field>
+            <field name="model">siat.leyendas</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="codigo_leyenda"/>
+                    <field name="actividad"/>
+                    <field name="descripcion"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_siat_leyendas">
+            <field name="name">Leyendas</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">siat.leyendas</field>
+            <field name="view_mode">tree</field>
+        </record>
+    </data>
+</odoo>
